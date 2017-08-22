@@ -1,5 +1,5 @@
 module.exports = {
-  entry: "./lib/dyn_sys_froggy.js",
+  entry: "./client/lib/dyn_sys_froggy.js",
   output: {
   	filename: "./server/static/js/bundle.js"
   },
