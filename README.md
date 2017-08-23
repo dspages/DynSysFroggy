@@ -9,6 +9,7 @@
 2. Activate your `virtualenv` with `$ source env/bin/activate`
 3. Install python dependencies with `$ pip install -r requirements.txt`
 4. Run the server with `python local.py`
+5. Navigate on over to `http://localhost:5000`
 
 `webpack` usage:
 Issue `$ webpack -w`
