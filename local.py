@@ -1,4 +1,5 @@
-""" run.py
+#!./env/bin/python
+""" local.py
 """
 from server import server
 
