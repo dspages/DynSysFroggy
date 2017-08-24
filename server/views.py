@@ -1,4 +1,4 @@
-""" app/views.py
+""" server/views.py
 """
 from flask import render_template
 
