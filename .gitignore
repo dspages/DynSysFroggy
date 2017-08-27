@@ -2,3 +2,5 @@
 venv/
 env/
 __pycache__/
+server/js/bundle.js
+server/js/bundle.js.map
