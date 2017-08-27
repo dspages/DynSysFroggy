@@ -9764,8 +9764,6 @@ var _display2 = _interopRequireDefault(_display);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var SCALE = 50.0;
-
 document.addEventListener("DOMContentLoaded", function () {
   var root = document.getElementById("root");
   _reactDom2.default.render(_react2.default.createElement(
@@ -22459,8 +22457,8 @@ var Display = function (_React$Component) {
     key: "updateGraph",
     value: function updateGraph() {
       var canvasEl = document.getElementById("canvas");
-      canvasEl.width = 600;
-      canvasEl.height = 600;
+      canvasEl.width = 620;
+      canvasEl.height = 620;
       var ctx = canvasEl.getContext("2d");
       var DT = this.state.length;
       var arr = [];
@@ -24321,6 +24319,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.getVector = getVector;
 exports.line = line;
 var SCALE = exports.SCALE = 50.0;
+var OFFSET = exports.OFFSET = 10.0;
 var algebra = __webpack_require__(191);
 
 function getVector(x, y, exprx, expry) {
@@ -24338,8 +24337,8 @@ function line(from, to, ctx) {
   var color = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : "black";
 
   ctx.beginPath();
-  ctx.moveTo((from[0] + 6) * SCALE, (from[1] + 6) * SCALE);
-  ctx.lineTo((to[0] + 6) * SCALE, (to[1] + 6) * SCALE);
+  ctx.moveTo((from[0] + 6) * SCALE + OFFSET, (from[1] + 6) * SCALE + OFFSET);
+  ctx.lineTo((to[0] + 6) * SCALE + OFFSET, (to[1] + 6) * SCALE + OFFSET);
   ctx.strokeStyle = color;
   ctx.stroke();
 }

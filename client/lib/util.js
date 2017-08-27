@@ -1,4 +1,5 @@
 export const SCALE = 50.0;
+export const OFFSET = 10.0;
 var algebra = require("algebra.js");
 
 export function getVector(x,y, exprx, expry){
@@ -14,8 +15,8 @@ export function getVector(x,y, exprx, expry){
 
 export function line(from, to, ctx, color="black") {
   ctx.beginPath();
-  ctx.moveTo((from[0]+6)*SCALE,(from[1]+6)*SCALE);
-  ctx.lineTo((to[0]+6)*SCALE,(to[1]+6)*SCALE);
+  ctx.moveTo((from[0]+6)*SCALE+OFFSET,(from[1]+6)*SCALE+OFFSET);
+  ctx.lineTo((to[0]+6)*SCALE+OFFSET,(to[1]+6)*SCALE+OFFSET);
   ctx.strokeStyle=color;
   ctx.stroke();
 }
