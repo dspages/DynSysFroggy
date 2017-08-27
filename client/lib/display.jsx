@@ -1,7 +1,6 @@
 import React from 'react';
 var algebra = require("algebra.js");
-import {SCALE, line, getVector} from "./util.js";
-
+import {SCALE, OFFSET, line, getVector} from "./util.js";
 
 class Display extends React.Component{
   constructor(props){
@@ -22,8 +21,8 @@ class Display extends React.Component{
 
   updateGraph(){
     const canvasEl = document.getElementById("canvas");
-    canvasEl.width = 600;
-    canvasEl.height = 600;
+    canvasEl.width = 620;
+    canvasEl.height = 620;
     let ctx=canvasEl.getContext("2d");
     let DT=this.state.length;
     let arr=[];
