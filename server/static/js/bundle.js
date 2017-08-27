@@ -22496,10 +22496,11 @@ var Display = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (Display.__proto__ || Object.getPrototypeOf(Display)).call(this, props));
 
-    _this.state = { dxdt: "y*y-x", dydt: "x-y" };
+    _this.state = { dxdt: "y*y-x", dydt: "x-y", length: 0.05 };
     _this.updateGraph = _this.updateGraph.bind(_this);
     _this.changedxdt = _this.changedxdt.bind(_this);
     _this.changedydt = _this.changedydt.bind(_this);
+    _this.changeLength = _this.changeLength.bind(_this);
     window.setTimeout(_this.updateGraph, 0);
     return _this;
   }
@@ -22513,20 +22514,18 @@ var Display = function (_React$Component) {
   }, {
     key: "updateGraph",
     value: function updateGraph() {
-      console.log("updating...");
-      console.log("DXDT is " + this.state.dxdt);
-      console.log("DYDT is " + this.state.dydt);
       var canvasEl = document.getElementById("canvas");
       canvasEl.width = 600;
       canvasEl.height = 600;
       var ctx = canvasEl.getContext("2d");
+      var DT = this.state.length;
       var arr = [];
       for (var i = -6; i <= 6; i++) {
         arr.push([]);
         for (var j = -6; j <= 6; j++) {
           var vector = (0, _util.getVector)(i, j, this.state.dxdt, this.state.dydt);
           arr[i + 6][j + 6] = vector;
-          (0, _util.line)([i, j], [i + parseFloat(vector[0]) * _util.DT, j + parseFloat(vector[1]) * _util.DT], ctx);
+          (0, _util.line)([i, j], [i + parseFloat(vector[0]) * DT, j + parseFloat(vector[1]) * DT], ctx);
         }
       }
     }
@@ -22543,15 +22542,23 @@ var Display = function (_React$Component) {
       window.setTimeout(this.updateGraph, 0);
     }
   }, {
+    key: "changeLength",
+    value: function changeLength(event) {
+      this.setState({ length: event.target.value });
+      window.setTimeout(this.updateGraph, 0);
+    }
+  }, {
     key: "render",
     value: function render() {
       return _react2.default.createElement(
         "div",
         null,
-        "Test DXDT: ",
+        "DXDT: ",
         _react2.default.createElement("input", { value: this.state.dxdt, onChange: this.changedxdt }),
         "DYDT: ",
         _react2.default.createElement("input", { value: this.state.dydt, onChange: this.changedydt }),
+        "Length: ",
+        _react2.default.createElement("input", { value: this.state.length, onChange: this.changeLength }),
         _react2.default.createElement("canvas", { id: "canvas" })
       );
     }
@@ -24370,7 +24377,6 @@ Object.defineProperty(exports, "__esModule", {
 exports.getVector = getVector;
 exports.line = line;
 var SCALE = exports.SCALE = 50.0;
-var DT = exports.DT = 0.02;
 var algebra = __webpack_require__(191);
 
 function getVector(x, y, exprx, expry) {
