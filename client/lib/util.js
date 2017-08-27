@@ -1,5 +1,4 @@
 export const SCALE = 50.0;
-export const DT = 0.02;
 var algebra = require("algebra.js");
 
 export function getVector(x,y, exprx, expry){
