@@ -90,8 +90,8 @@ function getVector(x,y) {
   //
   // var dydt = new algebra.Expression("x");
   // dydt = dydt.subtract("y");
-  // return [-x,-y];
-  // return [-x,(-x*y)+x*5];
+  // return [(y*x)+1,x-y];
+  // return [-x+2+y,(-x*y)-y];
   return [Math.cos(y*y)*5,Math.sin(x-y)*5];
   // return [Math.cos(x-y),x-y];
   // return [(x*x)-y,x-y];

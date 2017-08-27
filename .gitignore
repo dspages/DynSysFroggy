@@ -1,6 +1,7 @@
+.DS_Store
 .env
 venv/
 env/
 __pycache__/
-server/js/bundle.js
-server/js/bundle.js.map
+server/static/js/bundle.js
+server/static/js/bundle.js.map
