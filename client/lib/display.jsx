@@ -6,7 +6,7 @@ import {SCALE, line, getVector} from "./util.js";
 class Display extends React.Component{
   constructor(props){
     super(props);
-    this.state = {dxdt: "y*y-x", dydt: "x-y", length: 0.05};
+    this.state = {dxdt: "y*y-x", dydt: "x-y", length: 0.02};
     this.updateGraph = this.updateGraph.bind(this);
     this.changedxdt = this.changedxdt.bind(this);
     this.changedydt = this.changedydt.bind(this);
@@ -15,11 +15,9 @@ class Display extends React.Component{
   }
 
   componentDidMount(){
-
   }
 
   componentWillUnmount(){
-
   }
 
   updateGraph(){
@@ -63,8 +61,6 @@ class Display extends React.Component{
         Length: <input value={this.state.length} onChange={this.changeLength}></input>
         <canvas id="canvas"></canvas>
       </div>
-
-
     );
   }
 }
