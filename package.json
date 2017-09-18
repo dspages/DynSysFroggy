@@ -1,5 +1,9 @@
 {
-  "name": "skeleton",
+  "engines": {
+    "node": "4.1.1",
+    "npm": "2.1.x"
+  },
+  "name": "Dynamic Systems Froggy",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

@@ -1,1 +1,1 @@
-# Dynamical Systems Froggy
+# Dynamic Systems Froggy
