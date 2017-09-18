@@ -10,5 +10,4 @@ if __name__ == '__main__':
         return server
 
     server = create_app()
-    server.debug = True
-    server.run()
+    server.run(debug=True)
